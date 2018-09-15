@@ -8,7 +8,23 @@
   vars_files:
     - variables/vars.yaml
 
-  tasks:
-    - name: copy-github-dotfiles-repo
+  tasks: 
+    - name: 01.copy-github-dotfiles-repo
+      git:
+        repo: "{{ gitRepoName }}"
+        dest: "{{ destDirName }}"
     
-    - name: 
+    - name: 02.copy-dotfiles-to-home
+      copy: 
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: root
+        group: root
+        mode: 0644
+      with_items:
+      - src: "{{ destDirName }}/configs/.bash_profile"
+        dest: "~/.bash_profile"
+      - src: "{{ destDirName }}/configs/.vimrc"
+        dest: "~/.vimrc"
+      - src: "{{ destDirName }}/configs/motd"
+        dest: "~/motd"

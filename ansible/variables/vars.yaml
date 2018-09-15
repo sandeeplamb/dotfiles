@@ -1,0 +1,4 @@
+---
+## Repo-Name
+gitRepoName: "https://github.com/sandeeplamb/dotfiles.git"
+destDirName: "~/repositories/dotfiles"
