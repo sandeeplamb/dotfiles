@@ -7,6 +7,7 @@ My environment remains same everywhere.
 ## Commands
 
 `sudo ansible-playbook main.yaml --check`
+
 `sudo ansible-playbook main.yaml`
 
 Pre-requisite is ansible and git.
