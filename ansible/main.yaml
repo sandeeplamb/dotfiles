@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  gather_facts: false
+  become: yes
+  connection: local
+
+  vars_files:
+    - variables/vars.yaml
+
+  tasks:
+    - name: copy-github-dotfiles-repo
+    
+    - name: 
